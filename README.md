@@ -6,3 +6,13 @@ A TabbedPage for Xamarin Forms which supports:
 * **Navigation support**: Possibility to push the TabbedPage itself on the navigation stack. 
 
 Example view:
+
+Still to do..
+
+## Installation
+
+Still to do..
+
+## Usage
+
+Still to do..
