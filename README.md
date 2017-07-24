@@ -128,6 +128,13 @@ public MyTabbedPage()
 
 Properties
 
+<table>
+   <tr>
+      <td>MorePageTitle</td>
+      <td>A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</td>
+</tr>
+</table>
+
 <div style="margin-bottom: 12px;">
    <div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">
       MorePageTitle
