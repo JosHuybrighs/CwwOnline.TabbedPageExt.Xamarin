@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabbedPageExt.MorePage">
+    <!--more_horiz_black-->
+  <ContentPage.Icon>
+    <OnPlatform x:TypeArguments="FileImageSource"
+                iOS="tabbedpageext_more_horiz_black.png"/>
+  </ContentPage.Icon>
+
+  <StackLayout VerticalOptions="FillAndExpand">
+    <ListView x:Name="ChildrenView"
+              VerticalOptions="FillAndExpand">
+      <ListView.ItemTemplate>
+        <!--BindingContext = MorePageItem-->
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="12,4,12,4"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Spacing="12">
+               <Image Source="{Binding MoreListIcon}"
+                      HorizontalOptions="Start"
+                      WidthRequest="25"
+                      HeightRequest="25"/>
+              <Label Text="{Binding Text}"
+                     VerticalOptions="Center"/>
+              <Image HorizontalOptions="EndAndExpand"
+                     HeightRequest="25"
+                     WidthRequest="25"
+                     Source="{Binding RightBracketImage}">
+              </Image>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

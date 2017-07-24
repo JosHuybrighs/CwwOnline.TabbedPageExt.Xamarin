@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TabbedPageExtDemo.DemoContentPage">
+  <!--ViewModel = DemoContentPageViewModel-->
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Send message" Order="Primary" Command="{Binding SendMessageCmd}">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    iOS="send_message.png"
+                    Android="send_message_white.png"
+                    WinPhone="Assets/send_message_white.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+  <ContentPage.Content>
+    <StackLayout Margin="12,12,12,0">
+            <Label Text="This is a demo TabPage hosted by TabbedPageExt."
+                   FontSize="20"/>
+            <Label Text="This UI is defined in XAML" />
+            <Label Text="The page comes with a 'Send message' button on the toolbar."
+                   Margin="0,12,0,0"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

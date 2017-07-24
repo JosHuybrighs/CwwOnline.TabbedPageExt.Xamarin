@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TabbedPageExtDemo"
+             x:Class="TabbedPageExtDemo.MainPage"
+             Title="Home">
+
+  <StackLayout Margin="12,12,12,12">
+    <Label Text="Welcome to the TabbedPageExt demo app."
+           FontSize="18"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Label Text="The demo lets you open a TabbedPage that will be pushed on the navigation stack."/>
+        <Label Text="The page has 8 'tab' pages of which only 4 or visible. The non-visible pages are accessible through a 'More' button."/>
+        <Label Text="Two overflow page access modes are shown: the first uses a 'more' page view (as in iOS), the second uses a 'more' popup menu."/>
+        <Button Clicked="Button_Clicked_ModeMore"
+        Text="Open TabbedPage, Mode: 'More' page view"/>
+    <Button Clicked="Button_Clicked_ModeToolbar"
+        Text="Open TabbedPage, Mode: 'More' popup menu"/>
+    </StackLayout>
+
+</ContentPage>

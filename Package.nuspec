@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CwwOnline.TabbedPageExt.Xamarin</id>
+    <version>1.0.1</version>
+    <authors>Jos Huybrighs</authors>
+    <owners>Jos Huybrighs</owners>
+    <licenseUrl>https://github.com/JosHuybrighs/CwwOnline.TabbedPageExt.Xamarin/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/JosHuybrighs/CwwOnline.TabbedPageExt.Xamarin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A TabbedPage for xamarin.forms supporting UI virtualization, a uniform 'More' view on all platforms, and the possibility to be pushed on the navigation stack.</description>
+    <releaseNotes>
+	[1.0.0]
+	First version.
+	[1.0.1]
+	Added support for a 'More' popup toolbar for all platforms.
+	Page items in the popup menu display with an icon and text.
+	Various UI elements of the popup menu (background color, seperator, etc.) can be configured.
+	</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>xamarin forms crossplatform navigation tabbedpage tabbar toolbar</tags>
+    <dependencies>
+		<group>
+			<dependency id="Xamarin.Forms" version="1.4.3"/>
+		</group>
+    </dependencies>
+  </metadata>
+  <files>
+        <!-- PCL -->
+        <file src="TabbedPageExt\TabbedPageExt\bin\Release\TabbedPageExt.dll" target="lib\portable-net45+netcore45+wpa81+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\TabbedPageExt.dll" />
+        <!-- android -->
+        <file src="TabbedPageExt\TabbedPageExt\bin\Release\TabbedPageExt.dll" target="lib\MonoAndroid\TabbedPageExt.dll" />
+        <file src="TabbedPageExt\TabbedPageExt.Android\bin\Release\TabbedPageExt.Android.dll" target="lib\MonoAndroid\TabbedPageExt.Android.dll" />
+        <!-- iOS -->
+        <file src="TabbedPageExt\TabbedPageExt\bin\Release\TabbedPageExt.dll" target="lib\Xamarin.iOS10\TabbedPageExt.dll" />
+        <file src="TabbedPageExt\TabbedPageExt.iOS\bin\Release\TabbedPageExt.iOS.dll" target="lib\Xamarin.iOS10\TabbedPageExt.iOS.dll" />
+        <!-- uwp -->
+        <file src="TabbedPageExt\TabbedPageExt\bin\Release\TabbedPageExt.dll" target="lib\UAP10\TabbedPageExt.dll" />
+  </files>
+  
+</package>

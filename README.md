@@ -1,5 +1,7 @@
 # CwwOnline.TabbedPageExt.Xamarin
 
+[package version: 1.0.1 and higher]
+
 A TabbedPage for Xamarin Forms which supports:
 * **UI virtualization**: Tab pages can either directly be created (before they are selected) or they can be created at the moment the tab is selected.
 * **Crossplatform 'More' view**: For all platforms (android, iOS, uwp, ..) a 'more' tabbar button (iOS) or toolbar button (android, uwp) is automatically inserted popping up an iOS-like "More" listview to select one of the 'hidden' pages.
@@ -8,10 +10,10 @@ As an option it also possible to configure the tabbed page to show a popup menu 
 
 Example view:
 
-#### Mode 1: 'More' page list (as in iOS)
+### Mode 1: 'More' page list (as in iOS)
 ![](doc/tabbedpage_moreview.png)"
 
-#### Mode 2: 'More' popup menu (as in android)
+### Mode 2: 'More' popup menu (as in android)
 ![](doc/tabbedpage_morepopup.PNG)"
 
 ### Supported platforms

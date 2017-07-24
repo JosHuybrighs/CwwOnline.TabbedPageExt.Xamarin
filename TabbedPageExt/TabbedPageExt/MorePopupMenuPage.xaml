@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 BackgroundColor="Transparent"
+                 xmlns:local="clr-namespace:TabbedPageExt"
+                 x:Class="TabbedPageExt.MorePopupMenuPage"
+                 x:Name="Root">
+    <StackLayout VerticalOptions="Start"
+                 HorizontalOptions="End"
+                 x:Name="ContentStackLayout">
+        <StackLayout>
+            <ListView x:Name="MenuItemsListView"
+                      VerticalOptions="FillAndExpand"
+                      WidthRequest="200"
+                      HeightRequest="350">
+                <ListView.ItemTemplate>
+                    <!--BindingContext = MorePageItem-->
+                    <DataTemplate>
+                        <local:PopupMenuItemViewCell SelectedBackgroundColor="{Binding MenuItemSelectedBackgroundColor, Source={x:Reference Root}}">
+                            <StackLayout Padding="12,4,12,4"
+                                         Orientation="Horizontal"
+                                         HorizontalOptions="StartAndExpand"
+                                         WidthRequest="200"
+                                         Spacing="12">
+                                <Image Source="{Binding MoreListIcon}"
+                                       HorizontalOptions="Start"
+                                       WidthRequest="25"
+                                       HeightRequest="25"/>
+                                <Label Text="{Binding Text}"
+                                       VerticalOptions="Center"
+                                       TextColor="{Binding MenuItemTextColor, Source={x:Reference Root}}"/>
+                            </StackLayout>
+                        </local:PopupMenuItemViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</popup:PopupPage>
