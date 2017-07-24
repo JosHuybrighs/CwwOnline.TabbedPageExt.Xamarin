@@ -130,37 +130,22 @@ Properties
 
 <table>
    <tr>
-      <td>MorePageTitle</td>
+      <td><bold>MorePageTitle</bold></td>
       <td>A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</td>
-</tr>
+   </tr>
+   <tr>
+      <td><bold>MorePagesMode</bold></td>
+      <td>The maximum number of tabs to be shown on the TabbedPage. Default = 4.</td>
+   </tr>
+   <tr>
+      <td><bold>MaxTabs</bold></td>
+      <td>Defines how overflow pages (i.e. those exceeding MaxTabs while adding them) are made accessible. Set to enum value MorePagesAccessMode.MorePage (default) or  MorePagesAccessMode.MorePopupMenu.</td>
+   </tr>
+   <tr>
+      <td><bold>DontMovePages</bold></td>
+      <td>Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</td>
+   </tr>
 </table>
-
-<div style="margin-bottom: 12px;">
-   <div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">
-      MorePageTitle
-   </div>
-   <div style="margin-left:160px;">
-      A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).
-   </div>
-</div>
-
-Another
-
-<div style="margin-bottom: 12px;">
-<div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">MaxTabs</div>
-<div style="margin-left:160px;">The maximum number of tabs to be shown on the TabbedPage. Default = 4.</div>
-</div>
-
-<div style="margin-bottom: 12px;">
-<div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">MorePagesMode</div>
-<div style="margin-left:160px;">Defines how overflow pages (i.e. those exceeding MaxTabs while adding them) are made accessible. Set to enum value MorePagesAccessMode.MorePage (default) or  MorePagesAccessMode.MorePopupMenu.</div>
-</div>
-
-<div style="margin-bottom: 12px;">
-<div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">DontMovePages</div>
-<div style="margin-left:160px;">Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</div>
-</div>
-
 
 #### TabPage class
 Still to do...
