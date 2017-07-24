@@ -27,11 +27,10 @@ Install the plugin into your PCL project and in your iOS and Android client proj
 If you also target UWP then you have to manually copy 2 files in the UWP project:
 - tabbedpageext_more_vert_black.png, and
 - tabbedpageext_more_vert_white.png
-You can find various resolutions of these files in the plugin's Android "resources/drawable" folders [here]();
+You can find various resolutions of these files in the plugin's Android "resources/drawable" folders [here](TabbedPageExt/TabbedPageExt.Android/Resources);
 
 If you want to have a popup menu when pressing 'More' then you must also install the Rg.Plugins.Popup package. This plugin is also available on NuGet: [https://www.nuget.org/packages/Rg.Plugins.Popup](https://www.nuget.org/packages/Rg.Plugins.Popup).
-It extends the footprint of your app somewhat but it is an easy to use tool in your project in case you are looking for flexible and customizable popups. 
-
+It extends the footprint of your app somewhat but it is an easy to use tool in your project in case you are looking for flexible and customizable popups.
 
 ### Usage
 TabbedPageExt extends the TabbedPage class of xamarin.forms in a couple of ways:
@@ -126,6 +125,8 @@ public MyTabbedPage()
 ### API description
 
 #### TabbedPageExt properties
+{::nomarkdown}
+
 <div style="margin-bottom: 12px;">
 <div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">MorePageTitle</div>
 <div style="margin-left:160px;">A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</div>
@@ -146,6 +147,7 @@ public MyTabbedPage()
 <div style="margin-left:160px;">Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</div>
 </div>
 
+{:/}
 
 #### TabPage class
 Still to do...
