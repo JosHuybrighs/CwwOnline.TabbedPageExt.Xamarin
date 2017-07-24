@@ -125,12 +125,19 @@ public MyTabbedPage()
 ### API description
 
 #### TabbedPageExt properties
-{::nomarkdown}
+
+Properties
 
 <div style="margin-bottom: 12px;">
-<div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">MorePageTitle</div>
-<div style="margin-left:160px;">A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</div>
+   <div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">
+      MorePageTitle
+   </div>
+   <div style="margin-left:160px;">
+      A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).
+   </div>
 </div>
+
+Another
 
 <div style="margin-bottom: 12px;">
 <div style="float:left; width:150px; color: #454545; font-size: 1.2em; font-weight: bold;">MaxTabs</div>
@@ -147,7 +154,6 @@ public MyTabbedPage()
 <div style="margin-left:160px;">Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</div>
 </div>
 
-{:/}
 
 #### TabPage class
 Still to do...
