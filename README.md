@@ -1,6 +1,6 @@
 # CwwOnline.TabbedPageExt.Xamarin
 
-[package version: 1.0.1 and higher]
+[package version: 1.0.2 and higher]
 
 A TabbedPage for Xamarin Forms which supports:
 * **UI virtualization**: Tab pages can either directly be created (before they are selected) or they can be created at the moment the tab is selected.
@@ -230,7 +230,9 @@ public TabPage(string title, string pageIcon, string moreListIcon,
    </tr>
    <tr>
       <td valign="top"><strong>pageIcon</strong></td>
-      <td>A string defining the name of a resource file containing the icon that must be used as 'tab' page icon.</td>
+      <td>A string defining the name of a resource file containing the icon that must be used as 'tab' page icon.</br>
+On iOS the icon is shown on the tab bar at the bottom of the screen.</br>
+On Android it is shown together with the title on the page's tab appearing at the top of the screen. Leave the icon empty for Android of you only want to have a title in the tab.</td>
    </tr>
    <tr>
       <td valign="top"><strong>moreListIcon</strong></td>
@@ -255,15 +257,15 @@ public TabPage(string title, string pageIcon, string moreListIcon,
 <table>
    <tr>
       <td valign="top"><strong>title</strong></td>
-      <td>A string specifying the title of the page.</td>
+      <td>See constructor 1.</td>
    </tr>
    <tr>
       <td valign="top"><strong>pageIcon</strong></td>
-      <td>A string defining the name of a resource file containing the icon that must be used as 'tab' page icon.</td>
+      <td>See constructor 1.</td>
    </tr>
    <tr>
       <td valign="top"><strong>moreListIcon</strong></td>
-      <td>A string defining the name of a resource file containing the icon that must be shown on the left side of the page title in a 'more' page list or popup menu.</td>
+      <td>See constructor 1.</td>
    </tr>
    <tr>
       <td valign="top"><strong>createContentPage</strong></td>

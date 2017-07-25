@@ -1,9 +1,9 @@
-﻿using Rg.Plugins.Popup.Extensions;
+﻿using Xamarin.Forms;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using Xamarin.Forms;
 
 namespace TabbedPageExt
 {
@@ -201,7 +201,7 @@ namespace TabbedPageExt
                                 MorePageItem pageItem = new MorePageItem(tabPage,
                                     () =>
                                     {
-                                        ContentPage newPage = tabPage.CreateContentPage();
+                                        ContentPage newPage = tabPage.CreateContentPageInstance();
                                         Navigation.PushAsync(newPage);
                                     });
                                 // Check if it must be presented in 'MorePage' or in a dropdown list

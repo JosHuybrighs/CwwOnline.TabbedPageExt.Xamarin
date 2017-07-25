@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TabbedPageExt</name>
+    </assembly>
+    <members>
+        <member name="T:TabbedPageExt.MorePageItem">
+            <summary>
+            A class that encapsulates all the data and methods that are necessary to hold a TabPage on a MorePage.
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.MorePageItem.TextProperty">
+            <summary>
+            BindableProperty for the Text property
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.Text">
+            <summary>
+            A string holding the tabpage item's text
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.MorePageItem.IconProperty">
+            <summary>
+            BindableProperty for the Icon property
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.Icon">
+            <summary>
+            A FileImageSource defining the tabpage icon
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.MorePageItem.MoreListIconProperty">
+            <summary>
+            BindableProperty for the MoreListIcon property
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.MoreListIcon">
+            <summary>
+            A FileImageSource defining the tabpage icon
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.IsEnabled">
+            <summary>
+            Property defining whether the item is enabled or not. 
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.RightBracketImage">
+            <summary>
+            A property to obtain the ImageSource for the right bracket icon
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.MorePageItem.TabPage">
+            <summary>
+            Property to keep the item's TabPage
+            </summary>
+        </member>
+        <member name="E:TabbedPageExt.MorePageItem.Clicked">
+            <summary>
+            The event handler to be called when the item is clicked
+            </summary>
+        </member>
+        <member name="M:TabbedPageExt.MorePageItem.#ctor(TabbedPageExt.TabPage,System.Action)">
+            <summary>
+            MorePageItem constructor expecting a TabPage and an Action delegate function
+            </summary>
+            <param name="tabPage">The TabPage object to be assigned to the item.</param>
+            <param name="activated">The Action delegate to be called when the item is clicked.</param>
+        </member>
+        <member name="M:TabbedPageExt.MorePageItem.OnClicked">
+            <summary>
+            Method to be called from within the UI to indicate that the item is clicked. 
+            </summary>
+        </member>
+        <member name="T:TabbedPageExt.TabbedPageExt">
+            <summary>
+            A TabbedPage supporting UI virtualization and an iOS-like more tab page across all platforms. 
+            </summary>
+        </member>
+        <member name="T:TabbedPageExt.TabbedPageExt.MorePagesAccessMode">
+            <summary>
+            An enum defining how excessive pages can be revealed
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.TabbedPageExt.MorePagesAccessMode.MorePage">
+            <summary>
+            Excessive pages are hidden in a MorePage view (as in iOS)
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.TabbedPageExt.MorePagesAccessMode.MorePopupMenu">
+            <summary>
+            Excessive pages are hidden in a DropDown list available as a More toolbar icon (as in android)
+            </summary>
+        </member>
+        <member name="T:TabbedPageExt.TabbedPageExt.IconColor">
+            <summary>
+            An enum to choose between a white or a black More toolbar icon on Android.
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.TabbedPageExt.IconColor.White">
+            <summary>
+            White toolbar icon on android.
+            </summary>
+        </member>
+        <member name="F:TabbedPageExt.TabbedPageExt.IconColor.Black">
+            <summary>
+            Black toolbar icon on android.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.TabPages">
+            <summary>
+            List holding the tab pages of TabbedPageExt.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MaxTabs">
+            <summary>
+            The maximum number of tabs to be shown on the TabbedPage. Default = 4.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePagesMode">
+            <summary>
+            Defines the MorePagesAccessMode.
+            Default = MorePage.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.DontMovePages">
+            <summary>
+            Set this property to True when you don't want the first hidden tab page to be shown in case a
+            visible page is removed.
+            Default = false.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePageTitle">
+            <summary>
+            A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms). 
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MoreToolbarIcon">
+            <summary>
+            Icon string for the More toolbar icon. When set it overrides the default icon provided by the plugin.
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePopupMenuBackgroundColor">
+            <summary>
+            Background color of the 'More' popup menu
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePopupMenuItemTextColor">
+            <summary>
+            Text color of the text in the 'More' popup menu
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePopupMenuItemSeperatorVisibility">
+            <summary>
+            Indicates if menuitems have a seperator or not
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePopupMenuItemSeperatorColor">
+            <summary>
+            Color of menu seperator lines in a 'More' popup menu
+            </summary>
+        </member>
+        <member name="P:TabbedPageExt.TabbedPageExt.MorePopupMenuItemSelectedBackgroundColor">
+            <summary>
+            Background color of a selected item in the 'More' popup menu
+            </summary>
+        </member>
+        <member name="M:TabbedPageExt.TabbedPageExt.#ctor(TabbedPageExt.TabbedPageExt.IconColor)">
+            <summary>
+            Constructor for TabbedPageExt. You can pass an optional IconColor value specifying whether
+            the 'more' toolbar icon is black or white. On iOS it comes as any other iOS icon in the toolbar (e.g. blue).
+            </summary>
+            <param name="androidMoreIconColor">Color of the More toolbar icon for Android</param>
+            <param name="winMoreIconColor">Color of the More toolbar icon for UWP</param>
+        </member>
+        <member name="M:TabbedPageExt.TabbedPageExt.OnCurrentPageChanged">
+            <summary>
+            Invoked when a new TabPage becomes active.
+            </summary>
+        </member>
+        <member name="M:TabbedPageExt.TabPage.#ctor(System.String,System.String,System.String,System.Type,System.Object)">
+            <summary>
+            Construct TabPage with a title and icon, for a given page type and page viewmodel 
+            </summary>
+            <param name="title">The title of the TabPage.</param>
+            <param name="pageIcon">A string defining the resource/asset filename of the page icon.</param>
+            <param name="moreListIcon">A string defining the resource/asset filename of the icon that must be
+            shown when the page is listed in the 'more' page list or popup menu.</param>
+            <param name="pageType">Type of content page that must be created when the TabPage is shown.</param>
+            <param name="viewModel">An optional object to be assigned to the content page BindingContext.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:TabbedPageExt.TabPage.#ctor(System.String,System.String,System.String,System.Func{Xamarin.Forms.ContentPage})" -->
+        <member name="M:TabbedPageExt.TabPage.Show(Xamarin.Forms.ToolbarItem)">
+            <summary>
+            Show TabPage
+            </summary>
+        </member>
+        <member name="M:TabbedPageExt.TabPage.Hide">
+            <summary>
+            Hide TabPage
+            </summary>
+        </member>
+    </members>
+</doc>

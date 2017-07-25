@@ -56,6 +56,7 @@ namespace TabbedPageExt
         /// </summary>
         public void Show(ToolbarItem moreToolbarItem)
         {
+            /*
             if (_viewPageType == null)
             {
                 _contentPage = CreateContentPage();
@@ -73,6 +74,8 @@ namespace TabbedPageExt
                 }
                 _contentPage = newPage as ContentPage;
             }
+            */
+            _contentPage = CreateContentPageInstance();
             if (_contentPage != null)
             {
                 this.BindingContext = _contentPage.BindingContext;
@@ -113,16 +116,6 @@ namespace TabbedPageExt
         {
             if (_contentPage != null)
             {
-                /*
-                foreach (var item in _contentPage.ToolbarItems)
-                {
-                    this.ToolbarItems.Remove(item);
-                }
-                if (moreToolbarItem != null)
-                {
-                    this.ToolbarItems.Remove(moreToolbarItem);
-                }
-                */
                 this.ToolbarItems.Clear();
                 _contentPage = null;
                 ContentBaseLayout.Children.Clear();
@@ -134,6 +127,24 @@ namespace TabbedPageExt
         public void AddToolbarItem(ToolbarItem moreToolbarItem)
         {
 
+        }
+
+        public ContentPage CreateContentPageInstance()
+        {
+            if (_viewPageType == null)
+            {
+                return CreateContentPage();
+            }
+            Page newPage = null;
+            if (_viewPageViewModel != null)
+            {
+                newPage = (Page)Activator.CreateInstance(_viewPageType, _viewPageViewModel);
+            }
+            else
+            {
+                newPage = (Page)Activator.CreateInstance(_viewPageType);
+            }
+            return newPage as ContentPage;
         }
 
         public void Initialize(string title, string pageIcon, string moreListIcon)
