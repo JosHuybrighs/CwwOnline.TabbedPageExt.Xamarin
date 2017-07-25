@@ -138,6 +138,22 @@ public MyTabbedPage()
 
 When you remove a child page that is not in the 'overflow' page list, then the plugin will move the first page in the 'overflow' list to the visible list. If you don't want that then you must set the **DontMovePages** property to true.
 
+### Styling
+#### More page list
+The iOS-like page list is created as a basic **ContentPage** with a **ListView**. The plugin doesn't set any color, height, etc. properties.
+#### More popup menu
+The android-like popup menu is a popup of which the list is fixed aligned to the top and right side of the screen using a defined margin.
+Default styles are:
+- Margin: 0,44,8,0 (iOS) and 0,56,8,0 (Android and UWP)
+- Width: 200
+- Height: Number of page items x platform-dependent item height (iOS: 44, Android: 45, UWP: 33).
+- TextColor of the page title label: White.
+- Background color: "#303030"
+- Page item seperator color: "#9C969C"
+- Page item selected background color: "#707070"
+
+You can change the above defaults by defining different values through a number of properties of your **TabbedPageExt** page. See API description.
+
 ### API description
 
 #### TabbedPageExt properties
