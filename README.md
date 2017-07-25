@@ -127,25 +127,33 @@ public MyTabbedPage()
 
 #### TabbedPageExt properties
 
-Properties
-
 <table>
    <tr>
       <td valign="top"><strong>MorePageTitle</strong></td>
       <td>A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</td>
    </tr>
    <tr>
-      <td><bold>MorePagesMode</bold></td>
+      <td valign="top"><strong>MorePagesMode</strong></td>
       <td>The maximum number of tabs to be shown on the TabbedPage. Default = 4.</td>
    </tr>
    <tr>
-      <td><bold>MaxTabs</bold></td>
+      <td valign="top"><strong>MaxTabs</strong></td>
       <td>Defines how overflow pages (i.e. those exceeding MaxTabs while adding them) are made accessible. Set to enum value MorePagesAccessMode.MorePage (default) or  MorePagesAccessMode.MorePopupMenu.</td>
    </tr>
    <tr>
-      <td><bold>DontMovePages</bold></td>
+      <td valign="top"><strong>DontMovePages</strong></td>
       <td>Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</td>
    </tr>
+   <tr>
+      <td valign="top"><strong>MoreToolbarIcon</strong></td>
+      <td>Icon string for the More toolbar icon. When set it overrides the default icon provided by the plugin.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuMargin</strong></td>
+      <td>A xamarin.forms Thickness definition which you can set to override the default margin of the popup menu. Note that the margin aligns the menu on the top right side of the screen. That cannot be changed.
+      </td>
+   </tr>
+
 </table>
 
 #### TabPage class
