@@ -68,12 +68,12 @@ public class MyTabbedPage: TabbedPageExt.TabbedPageExt
       
       var tabPage3 = new TabPage(
          "Tab3",
-         "tab2_icon_white.png", "tab2_icon_black.png",
+         "tab3_icon_white.png", "tab3_icon_black.png",
          () =>
          {
-            return (ContentPage2)Activator.CreateInstance(typeof(ContentPage2), new ContentPage2ViewModel());
+            return (ContentPage3)Activator.CreateInstance(typeof(ContentPage3), new ContentPage3ViewModel());
          });
-      this.TabPages.Add(tabPage2);
+      this.TabPages.Add(tabPage3);
       
    }
 }
@@ -90,7 +90,19 @@ MyContentPage is typically a normal xamarin.forms **ContentPage**. **TabPage** i
 
 The 2nd method has the advantage that you have the freedom to create the the ContentPage's viewmodel at the moment the page is opened. If you opt to create view models using some kind of factory concept or dependency injection then of course method 1 works equally well.
 
-Note: Creating and populating a **TabbedPageExt** page using XAML is not supported. 
+Note: Creating and populating a **TabbedPageExt** page using XAML is not supported.
+
+#### Instantiating a TabbedPageExt
+Creating and opening a **TabbedPageExt** is done as with any xamarin.forms page.
+Next example pushes and opens the page on the navigation stack.
+```csharp
+private void OnOpenMyTabbedPage(object sender, EventArgs e)
+{
+   var navigationPage = App.Current.MainPage as NavigationPage;
+   var tabbedPage = new MyTabbedPage();
+   navigationPage.PushAsync(tabbedPage);
+}
+```
 
 #### Set overflow threshold
 The overflow threshold (default = 4) can be set by assigning a value to property **MaxTabs** of **TabbedPageExt**. You must set the value before adding child pages. An example:
@@ -105,7 +117,6 @@ public MyTabbedPage()
    }
 ```
 Note: On iOS you should never set the threshold higher than what is defined in the platform since iOS will automatically introduce a 'More' tab when you overflow the limit.
-
 
 #### More page list or popup menu
 As per default **TabbedPageExt** is configured to show an iOS-like page overflow selection list when tapping the 'more' button.
@@ -122,6 +133,10 @@ public MyTabbedPage()
    }
 ```
 
+#### Adding and removing child pages
+**TabbedPageExt** exposes the **TabPages** property (an **ObservableCollection**) upon which you can invoke the **Add**, **Remove**, and **Clear** methods.
+
+When you remove a child page that is not in the 'overflow' page list, then the plugin will move the first page in the 'overflow' list to the visible list. If you don't want that then you must set the **DontMovePages** property to true.
 
 ### API description
 
