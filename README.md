@@ -153,8 +153,91 @@ public MyTabbedPage()
       <td>A xamarin.forms Thickness definition which you can set to override the default margin of the popup menu. Note that the margin aligns the menu on the top right side of the screen. That cannot be changed.
       </td>
    </tr>
-
+   <tr>
+      <td valign="top"><strong>MorePopupMenuBackgroundColor</strong></td>
+      <td>Set this Color property to override the default background color of a popup menu.
+      </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuItemTextColor</strong></td>
+      <td>Set this Color property to override the default text color of a page title in a popup menu.
+      </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuItemSelectedBackgroundColor</strong></td>
+      <td>Set this Color property to override the default background color of a selected page item in a popup menu.
+      </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuItemSeperatorColor</strong></td>
+      <td>Set this Color property to override the default color of the seperator lines in a popup menu.
+      </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuItemSeperatorVisibility</strong></td>
+      <td>You can tell the plugin with this property to hide or show the seperator lines in a popup menu. Default: show.
+      </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>MorePopupMenuItemHeigth</strong></td>
+      <td>The plugin assumes that page items in a popup menu have a given height in a given platform. You can force a specific height here.
+      </td>
+   </tr>
 </table>
 
-#### TabPage class
-Still to do...
+#### TabPage constructor
+TabPage has 2 constructors.
+##### Constructor 1
+```csharp
+public TabPage(string title, string pageIcon, string moreListIcon,
+               Type pageType, object viewModel = null)
+```
+<table>
+   <tr>
+      <td valign="top"><strong>title</strong></td>
+      <td>A string specifying the title of the page.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>pageIcon</strong></td>
+      <td>A string defining the name of a resource file containing the icon that must be used as 'tab' page icon.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>moreListIcon</strong></td>
+      <td>A string defining the name of a resource file containing the icon that must be shown on the left side of the page title in a 'more' page list or popup menu.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>pageType</strong></td>
+      <td>The <strong>Type</strong> of the page that must be created when the user taps/opens the page. </td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>viewModel</strong></td>
+      <td>An object (typically a view model) that must be assigned as parameter in the page constructor. Leave empty if the plugin must construct the page without a parameter.</td>
+   </tr>
+</table>
+
+##### Constructor 2
+
+```csharp
+public TabPage(string title, string pageIcon, string moreListIcon,
+               Func<ContentPage> createContentPage)
+```
+<table>
+   <tr>
+      <td valign="top"><strong>title</strong></td>
+      <td>A string specifying the title of the page.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>pageIcon</strong></td>
+      <td>A string defining the name of a resource file containing the icon that must be used as 'tab' page icon.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>moreListIcon</strong></td>
+      <td>A string defining the name of a resource file containing the icon that must be shown on the left side of the page title in a 'more' page list or popup menu.</td>
+   </tr>
+   <tr>
+      <td valign="top"><strong>createContentPage</strong></td>
+      <td>A func delegate that creates the page (must derive from <strong>ContentPage</strong>) and returns the page as value. The method is invoked when the user taps/opens the page. </td>
+   </tr>
+</table>
+
+
