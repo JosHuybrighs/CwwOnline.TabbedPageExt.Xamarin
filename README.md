@@ -88,7 +88,7 @@ MyContentPage is typically a normal xamarin.forms **ContentPage**. **TabPage** i
 - The 2nd page is defined by passing a Func<> delegate to **TabPage** to create the **ContentPage** when the page is opened.
 - Other pages can then be added by using any of the above 2 methods.
 
-The 1st method has the advantage that you have the freedom to create the the ContentPage's viewmodel at the moment the page is opened. If you opt to create view models using some kind of factory concept or dependency injection then of course method 1 works equally well.
+The 2nd method has the advantage that you have the freedom to create the the ContentPage's viewmodel at the moment the page is opened. If you opt to create view models using some kind of factory concept or dependency injection then of course method 1 works equally well.
 
 Note: Creating and populating a **TabbedPageExt** page using XAML is not supported. 
 
@@ -131,7 +131,7 @@ Properties
 
 <table>
    <tr>
-      <td><bold>MorePageTitle</bold></td>
+      <td valign="top"><strong>MorePageTitle</strong></td>
       <td>A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</td>
    </tr>
    <tr>
