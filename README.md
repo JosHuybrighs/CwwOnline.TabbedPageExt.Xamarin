@@ -11,10 +11,10 @@ As an option it also possible to configure the tabbed page to show a popup menu 
 Example view:
 
 ### Mode 1: 'More' page list (as in iOS)
-![](doc/tabbedpage_moreview.png)"
+![](doc/tabbedpage_moreview.gif)"
 
 ### Mode 2: 'More' popup menu (as in android)
-![](doc/tabbedpage_morepopup.PNG)"
+![](doc/tabbedpage_morepopup.gif)"
 
 ### Supported platforms
 - iOS
