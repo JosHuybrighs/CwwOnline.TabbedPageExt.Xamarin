@@ -33,15 +33,16 @@ If you want to have a popup menu when pressing 'More' then you must also install
 It extends the footprint of your app somewhat but it is an easy to use tool in your project in case you are looking for flexible and customizable popups.
 
 ### Usage
-TabbedPageExt extends the TabbedPage class of xamarin.forms in a couple of ways:
+**TabbedPageExt** extends the **TabbedPage** class of xamarin.forms in a couple of ways:
 - The child pages that you want to add to the class are instantiated at the moment when the user selects them.
-- On Android and UWP TabbedPageExt also supports the idea of 'overflow' pages (as in iOS) to  reduce the number of visible tab pages on the screen and allow access to those pages by means of a 'More' toolbar button. Pressing the button shows either a page listview or a popup menu from where a given page can be opened.
-The overflow breakpoint is configurable.
-- The feature to have a popup menu for overflow pages is also available for iOS.
+- On Android and UWP **TabbedPageExt** also supports the concept of and 'overflow' page in a similar way as in iOS. The only difference is that the 'More' icon/button is on the top toolbar. Pressing the button shows a full page with a listview from where a page can be opened.
+**TabbedPageExt** creates itself the 'overflow' list page (also on iOS). This has the advantage that on all platforms the page (when opened) always appears on the top of the app; also when the tabbed page itself is pushed on the navigation stack.
+- On all platforms (i.e. also on iOS, if you want) **TabbedPageExt** can also be told to show the overflow pages in a popup menu.
+- The overflow breakpoint is configurable.
 
 #### Creating and populating a TabbedPageExt page
 
-The following example shows how to create a TabbedPageExt page and populate it with a number of child pages.
+The following example shows how to create a **TabbedPageExt** page and populate it with a number of child pages.
 ```csharp
 public class MyTabbedPage: TabbedPageExt.TabbedPageExt
 {
@@ -77,22 +78,22 @@ public class MyTabbedPage: TabbedPageExt.TabbedPageExt
    }
 }
 ```
-TabbedPageExt expects an IconColor enum value in its constructor which defines whether the 'More' icon in the app's toolbar must be black or white. The icon itself is defined in the plugin's assembly.
+**TabbedPageExt** expects an **IconColor* enum value in its constructor which defines whether the 'More' icon in the app's toolbar must be black or white. The icon itself is defined in the plugin's assembly.
 
-Property MorePage let's you change the 'More' icon title from the default ("More") to whatever language you want, like: "Meer" (dutch). 
+Property **MorePageTitle** let's you change the 'More' icon title from the default ("More") to whatever language you want, like: "Meer" (dutch). 
 
-The page is populated with a number of child pages by creating a TabPage for each of them:
+The page is populated with a number of child pages by creating a **TabPage** for each of them:
 - The title of the first page is "Tab1"; the page icon is "tab1_icon_white.png"; the icon used in the 'more' page list or popupmenu is "tab1_icon_black.png"; the actual content of the page comes from MyContentPage (and MyContentPageViewModel) which is created when the page is selected.
-MyContentPage is typically a normal xamarin.forms ContentPage. TabPage is instructed to instantiate this page by passing the page Type and an optional viewmodel object. When present, the viewmodel will be given as parameter to the page constructor.
-- The 2nd page is defined by passing a Func<> delegate to TabPage to create the ContentPage when the page is opened.
+MyContentPage is typically a normal xamarin.forms **ContentPage**. **TabPage** is instructed to instantiate this page by passing the page Type and an optional viewmodel object. When present, the viewmodel will be given as parameter to the page constructor.
+- The 2nd page is defined by passing a Func<> delegate to **TabPage** to create the **ContentPage** when the page is opened.
 - Other pages can then be added by using any of the above 2 methods.
 
 The 1st method has the advantage that you have the freedom to create the the ContentPage's viewmodel at the moment the page is opened. If you opt to create view models using some kind of factory concept or dependency injection then of course method 1 works equally well.
 
-Note: Creating and populating a TabbedPageExt page using XAML is not supported. 
+Note: Creating and populating a **TabbedPageExt** page using XAML is not supported. 
 
 #### Set overflow threshold
-The overflow threshold (default = 4) can be set by assigning a value to property MaxTabs of TabbedPageExt. You must set the value before adding child pages. An example:
+The overflow threshold (default = 4) can be set by assigning a value to property **MaxTabs** of **TabbedPageExt**. You must set the value before adding child pages. An example:
 ```csharp
 public MyTabbedPage()
       : base(Device.RuntimePlatform == Device.Android ? IconColor.White : IconColor.Black)
@@ -107,8 +108,8 @@ Note: On iOS you should never set the threshold higher than what is defined in t
 
 
 #### More page list or popup menu
-As per default TabbedPageExt is configured to show an iOS-like page overflow selection list when tapping the 'more' button.
-To change the mode to show a popup menu you must set the property MorePageMode to MorePagesAccessMode.MorePopupMenu. You must set the value before adding child pages. An example:
+As per default **TabbedPageExt** is configured to show an iOS-like page overflow selection list when tapping the 'more' button.
+To change the mode to show a popup menu you must set the property **MorePageMode** to **MorePagesAccessMode.MorePopupMenu**. You must set the value before adding child pages. An example:
 ```csharp
 public MyTabbedPage()
       : base(Device.RuntimePlatform == Device.Android ? IconColor.White : IconColor.Black)
