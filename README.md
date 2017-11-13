@@ -6,7 +6,9 @@ A TabbedPage for Xamarin Forms which supports:
 * **UI virtualization**: Tab pages can either directly be created (before they are selected) or they can be created at the moment the tab is selected.
 * **Crossplatform 'More' view**: For all platforms (android, iOS, uwp, ..) a 'more' tabbar button (iOS) or toolbar button (android, uwp) is automatically inserted popping up an iOS-like "More" listview to select one of the 'hidden' pages.
 As an option it also possible to configure the tabbed page to show a popup menu when touching the 'more' toolbar button (ios, android, uwp). The popup menu lists each overflow page with an icon and the page title.
-* **Navigation support**: Possibility to push the TabbedPage itself on the navigation stack. 
+* **Navigation support**: Possibility to push the TabbedPage itself on the navigation stack.
+
+Important: You can use TabbedPageExt instead of TabbedPage in all of your projects EXCEPT when you want to implement OnAppearing and OnDisappearing in one or more of your tab pages. These methods will NOT be called!
 
 Example view:
 
@@ -23,11 +25,12 @@ Example view:
 
 ### Installation
 The plugin is available on NuGet:  [https://www.nuget.org/packages/CwwOnline.TabbedPageExt.Xamarin/](https://www.nuget.org/packages/CwwOnline.TabbedPageExt.Xamarin/).
-Install the plugin into your PCL project and in your iOS and Android client projects.
-If you also target UWP then you have to manually copy 2 files in the UWP project:
-- tabbedpageext_more_vert_black.png, and
-- tabbedpageext_more_vert_white.png
+Install the plugin into your PCL project and in your iOS, Android and UWP client projects.
+In case of Android and UWP the plugin assumes that one of the following image files are present in the Android resources folder and the UWP main folder:
+- tabbedpageext_more_vert_black.png (in case you want a black 'more' icon in the toolbar), and
+- tabbedpageext_more_vert_white.png (in case of a white icon)
 You can find various resolutions of these files in the plugin's Android "resources/drawable" folders [here](TabbedPageExt/TabbedPageExt.Android/Resources);
+If necessary you can however also override the expected icon's filename. See properties. 
 
 If you want to have a popup menu when pressing 'More' then you must also install the Rg.Plugins.Popup package. This plugin is also available on NuGet: [https://www.nuget.org/packages/Rg.Plugins.Popup](https://www.nuget.org/packages/Rg.Plugins.Popup).
 It extends the footprint of your app somewhat but it is an easy to use tool in your project in case you are looking for flexible and customizable popups.
@@ -164,20 +167,20 @@ You can change the above defaults by defining different values through a number 
       <td>A string for the "More" text presented on the More tab (iOS) or the More toolbar icon (other platforms).</td>
    </tr>
    <tr>
+      <td valign="top"><strong>MoreToolbarIcon</strong></td>
+      <td>A string defining the name of the icon image on the 'More' button of the app toolbar. When set it overrides the default icon provided by the plugin.</td>
+   </tr>
+   <tr>
       <td valign="top"><strong>MorePagesMode</strong></td>
-      <td>The maximum number of tabs to be shown on the TabbedPage. Default = 4.</td>
+      <td>Defines how overflow pages (i.e. those exceeding MaxTabs while adding them) are made accessible. Set to enum value MorePagesAccessMode.MorePage (default) or  MorePagesAccessMode.MorePopupMenu.</td>
    </tr>
    <tr>
       <td valign="top"><strong>MaxTabs</strong></td>
-      <td>Defines how overflow pages (i.e. those exceeding MaxTabs while adding them) are made accessible. Set to enum value MorePagesAccessMode.MorePage (default) or  MorePagesAccessMode.MorePopupMenu.</td>
+      <td>The maximum number of tabs to be shown on the TabbedPage. Default = 4.</td>
    </tr>
    <tr>
       <td valign="top"><strong>DontMovePages</strong></td>
       <td>Set this property to True when you don't want the first hidden tab page to be shown in case a visible page is removed. Default = False.</td>
-   </tr>
-   <tr>
-      <td valign="top"><strong>MoreToolbarIcon</strong></td>
-      <td>Icon string for the More toolbar icon. When set it overrides the default icon provided by the plugin.</td>
    </tr>
    <tr>
       <td valign="top"><strong>MorePopupMenuMargin</strong></td>
